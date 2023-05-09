@@ -18,7 +18,7 @@ function App() {
     setInputText("");
 
     try {
-      const response = await axios.post("http://localhost:8000/api/predict", {
+      const response = await axios.post("http://35.174.168.113:8000/api/predict", {
         data: userMessage.text,
       });
       const botMessage = { sender: "bot", text: response.data };
