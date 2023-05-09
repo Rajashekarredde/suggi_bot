@@ -140,7 +140,7 @@ def handle_request(request):
     print(f"Sending response: {response_str.decode('utf-8')}")
     client_connection.sendall(response_str)
 
-server_address = ('localhost', 8000)
+server_address = ('0.0.0.0', 8000)
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 server_socket.bind(server_address)
