@@ -45,8 +45,9 @@ from tensorflow import keras
 import socket
 from gensim.models import KeyedVectors
 
-model_path = "/Users/rajashekarreddykommula/Downloads/GoogleNews-vectors-negative300.bin.gz"
-model = KeyedVectors.load_word2vec_format(model_path, binary=True)
+import gensim.downloader as api
+# Load pre-trained word2vec model
+model = api.load("word2vec-google-news-300")
 lemmatizer = WordNetLemmatizer()
 
 chatbot_model = tf.keras.models.load_model('/Users/rajashekarreddykommula/Downloads/Genie_word2vec.h5')
